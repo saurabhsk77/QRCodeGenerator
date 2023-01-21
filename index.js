@@ -1,9 +1,10 @@
 const express = require("express");
 const qr = require("qr-image");
 const { URL } = require("url");
+const cors = require("cors");
 
 const app = express();
-
+app.use(cors());
 app.get("/qr", (req, res) => {
   const url = req.query.url;
   try {
